@@ -1,21 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace pets;
 
-class IronGolemPet extends Pets {
+use pocketmine\entity\EntitySizeInfo;
 
-	const NETWORK_ID = 20;
-
-	public $width = 0.3;
-	public $length = 0.9;
-	public $height = 2.8;
-
-	public function getName() {
-		return "IronGolemPet";
-	}
-
-	public function getSpeed() {
-		return 2.2;
-	}
-
+final class IronGolemPet extends Pets{
+	public static function getNetworkTypeId() : string{ return "minecraft:iron_golem"; }
+	protected function getInitialSizeInfo() : EntitySizeInfo{ return $this->size(1.4, 2.7); }
+	protected function getFollowSpeed() : float{ return 2.2; }
 }

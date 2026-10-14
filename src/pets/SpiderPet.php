@@ -1,21 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace pets;
 
-class SpiderPet extends Pets {
+use pocketmine\entity\EntitySizeInfo;
 
-	const NETWORK_ID = 35;
-
-	public $width = 0.3;
-	public $length = 0.9;
-	public $height = 1.9;
-
-	public function getName() {
-		return "SpiderPet";
-	}
-
-	public function getSpeed() {
-		return 2.2;
-	}
-
+final class SpiderPet extends Pets{
+	public static function getNetworkTypeId() : string{ return "minecraft:spider"; }
+	protected function getInitialSizeInfo() : EntitySizeInfo{ return $this->size(1.4, 0.9); }
+	protected function getFollowSpeed() : float{ return 2.2; }
 }

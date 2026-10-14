@@ -1,20 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
 namespace pets;
 
-class ChickenPet extends Pets {
+use pocketmine\entity\EntitySizeInfo;
 
-	const NETWORK_ID = 10;
-	
-	public $width = 0.6;
-	public $length = 0.6;
-	public $height = 1.8;
-	
-		
-	public function getName() {
-		return "ChickenPet";
-	}
-		
-	public function getSpeed() {
-		return 2.0;
-	}
+final class ChickenPet extends Pets{
+	public static function getNetworkTypeId() : string{ return "minecraft:chicken"; }
+	protected function getInitialSizeInfo() : EntitySizeInfo{ return $this->size(0.4, 0.7); }
 }

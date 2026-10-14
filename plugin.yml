@@ -1,7 +1,20 @@
+---
 name: Pets
 author: NameLess
-description: Plugin Cho Phép Bạn Triệu Hồi Một Thú Cưng Khá Đáng Yêu
-version: 2.0
+description: Summon a session-only companion entity
+version: 3.0.0
 main: pets\main
-api: [1.0.0, 2.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2]
-#Edit Và Việt Hóa Bởi Ghast Noob
+api: 5.0.0
+load: POSTWORLD
+
+commands:
+  pets:
+    description: Summon and manage your companion pet
+    usage: /pets <type|name|off|info|help>
+    permission: pets.command
+
+permissions:
+  pets.command:
+    description: Allows a player to manage their companion pet
+    default: op
+...

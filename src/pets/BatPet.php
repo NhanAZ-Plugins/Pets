@@ -1,23 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace pets;
 
-class BatPet extends Pets {
+use pocketmine\entity\EntitySizeInfo;
 
-	const NETWORK_ID = 19;
-
-	public $width = 0.6;
-	public $length = 0.6;
-	public $height = 0.6;
-	public $flySpeed = 0.8;
-	public $switchDirectionTicks = 100;
-
-	public function getName() {
-		return "BatPet";
-	}
-
-	public function getSpeed() {
-		return 2.2;
-	}
-
+final class BatPet extends Pets{
+	public static function getNetworkTypeId() : string{ return "minecraft:bat"; }
+	protected function getInitialSizeInfo() : EntitySizeInfo{ return $this->size(0.9, 0.9); }
+	protected function getInitialGravity() : float{ return 0.0; }
+	protected function getFollowSpeed() : float{ return 2.2; }
 }

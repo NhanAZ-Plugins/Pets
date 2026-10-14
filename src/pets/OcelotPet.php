@@ -1,21 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace pets;
 
-class OcelotPet extends Pets {
+use pocketmine\entity\EntitySizeInfo;
 
-	const NETWORK_ID = 22;
-	
-	public $width = 0.312;
-	public $length = 2.188;
-	public $height = 0.75;
-	
-		
-	public function getName() {
-		return "OcelotPet";
-	}
-		
-	public function getSpeed() {
-		return 2.0;
-	}
+final class OcelotPet extends Pets{
+	public static function getNetworkTypeId() : string{ return "minecraft:cat"; }
+	protected function getInitialSizeInfo() : EntitySizeInfo{ return $this->size(0.6, 0.7); }
 }
