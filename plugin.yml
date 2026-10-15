@@ -1,6 +1,6 @@
 ---
 name: Pets
-author: NameLess
+author: NhanAZ
 description: Summon a session-only companion entity
 version: 3.0.0
 main: pets\main
